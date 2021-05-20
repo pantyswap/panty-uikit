@@ -26,7 +26,7 @@ const SocialLinks: React.FC = () => (
       //   );
       // }
       return (
-        <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
+        <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr} color="#F04D92">
           <Icon {...iconProps} />
         </Link>
       );

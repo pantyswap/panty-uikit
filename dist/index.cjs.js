@@ -3505,7 +3505,7 @@ var SIDEBAR_WIDTH_REDUCED = 56;
 var rainbowAnimation = styled.keyframes(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"], ["\n  0%,\n  100% {\n    background-position: 0 0;\n  }\n  50% {\n    background-position: 100% 0;\n  }\n"])));
 var LinkLabel = styled__default['default'].div(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"], ["\n  color: ", ";\n  transition: color 0.4s;\n  flex-grow: 1;\n"])), function (_a) {
     var isPushed = _a.isPushed, theme = _a.theme;
-    return (isPushed ? theme.colors.textSubtle : "transparent");
+    return (isPushed ? (theme.isDark ? theme.colors.textSubtle : '#F04D92') : "transparent");
 });
 var MenuEntry = styled__default['default'].div(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 400% 100%;\n  }\n"], ["\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  height: ", "px;\n  padding: ", ";\n  font-size: ", ";\n  background-color: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  a {\n    display: flex;\n    align-items: center;\n    width: 100%;\n    height: 100%;\n  }\n\n  svg {\n    fill: ", ";\n  }\n\n  &:hover {\n    background-color: ", ";\n  }\n\n  // Safari fix\n  flex-shrink: 0;\n\n  &.rainbow {\n    background-clip: text;\n    animation: ", " 3s ease-in-out infinite;\n    background: ", ";\n    background-size: 400% 100%;\n  }\n"])), MENU_ENTRY_HEIGHT, function (_a) {
     var secondary = _a.secondary;
@@ -3515,16 +3515,16 @@ var MenuEntry = styled__default['default'].div(templateObject_3$2 || (templateOb
     return (secondary ? "14px" : "16px");
 }, function (_a) {
     var secondary = _a.secondary, theme = _a.theme;
-    return (secondary ? theme.colors.background : "transparent");
+    return (secondary ? theme.isDark ? theme.colors.background : "#fbdee8" : "transparent");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.isDark ? theme.colors.textSubtle : "#F04D92";
 }, function (_a) {
     var isActive = _a.isActive, theme = _a.theme;
     return (isActive ? "inset 4px 0px 0px " + theme.colors.primary : "none");
 }, function (_a) {
     var theme = _a.theme;
-    return theme.colors.textSubtle;
+    return theme.isDark ? theme.colors.textSubtle : '#F04D92';
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.tertiary;
@@ -3634,9 +3634,9 @@ var ThemeSwitcher = function (_a) {
     var isDark = _a.isDark, toggleTheme = _a.toggleTheme;
     return (React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
         React__default['default'].createElement(Flex, { alignItems: "center" },
-            React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
-            React__default['default'].createElement(Text, { color: "textDisabled", mx: "4px" }, "/"),
-            React__default['default'].createElement(MoonIcon, { color: isDark ? "text" : "textDisabled", width: "24px" }))));
+            React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "#F04D92", width: "24px" }),
+            React__default['default'].createElement(Text, { color: "#d086a5", mx: "4px" }, "/"),
+            React__default['default'].createElement(MoonIcon, { color: isDark ? "#F04D92" : "#d086a5", width: "24px" }))));
 };
 var ThemeSwitcher$1 = React__default['default'].memo(ThemeSwitcher, function (prev, next) { return prev.isDark === next.isDark; });
 
@@ -3656,7 +3656,7 @@ var SocialLinks = function () { return (React__default['default'].createElement(
     //     </Dropdown>
     //   );
     // }
-    return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+    return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr, color: "#F04D92" },
         React__default['default'].createElement(Icon, __assign({}, iconProps))));
 }))); };
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
@@ -3665,8 +3665,8 @@ var Icons = IconModule;
 var LanguageIcon = Icons.LanguageIcon;
 var LangSelector = function (_a) {
     var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
-    return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: "textSubtle", width: "24px" }) },
-            React__default['default'].createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
+    return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: "#F04D92", width: "24px" }) },
+            React__default['default'].createElement(Text, { color: "#F04D92" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
         // Safari fix
         style: { minHeight: "32px", height: "auto" } }, lang.language)); })));
 };
