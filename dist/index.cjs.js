@@ -668,17 +668,10 @@ var Icon$W = function (props) {
 
 var Icon$V = function (props) {
     var theme = styled.useTheme();
-    var primaryColor = theme.isDark ? "#3C3742" : "#e9eaeb";
-    var secondaryColor = theme.isDark ? "#666171" : "#bdc2c4";
+    theme.isDark ? "#3C3742" : "#e9eaeb";
+    theme.isDark ? "#666171" : "#bdc2c4";
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 32 32" }, props),
-        React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: primaryColor }),
-        React__default['default'].createElement("mask", { id: "A", "mask-type": "alpha", maskUnits: "userSpaceOnUse", x: "0", y: "0", width: "32", height: "32" },
-            React__default['default'].createElement("path", { d: "M32 16c0 8.837-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0s16 7.163 16 16z", fill: "#c4c4c4" })),
-        React__default['default'].createElement("g", { mask: "url(#A)" },
-            React__default['default'].createElement("path", { d: "M25.128 16.436c0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641V15h18.461v1.436zm2.205 13.806c0-3.815-5.074-6.908-11.333-6.908S4.667 26.426 4.667 30.242V32h22.667v-1.759z", fill: secondaryColor }),
-            React__default['default'].createElement("path", { fillRule: "evenodd", d: "M10.234 5.601C9.942 4.264 10.96 3 12.328 3c1.184 0 2.143.959 2.143 2.143v3.873l1.427-.067c.589 0 1.166.034 1.724.098V5.143c0-1.184.959-2.143 2.143-2.143 1.368 0 2.386 1.264 2.093 2.601l-.931 4.258c2.529 1.006 4.201 2.749 4.201 4.731 0 3.115-4.133 5.641-9.231 5.641s-9.231-2.526-9.231-5.641c0-2.053 1.794-3.849 4.476-4.836l-.908-4.153z", fill: secondaryColor }),
-            React__default['default'].createElement("ellipse", { cx: "12.308", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }),
-            React__default['default'].createElement("ellipse", { cx: "19.385", cy: "14.846", rx: "1.026", ry: "1.538", fill: primaryColor }))));
+        React__default['default'].createElement("image", { width: "32", height: "32", href: "/images/panty-profile.png" })));
 };
 
 var Icon$U = function (props) {
@@ -3342,7 +3335,7 @@ var Logo = function (_a) {
         React__default['default'].createElement(Icon$12, { className: "mobile-icon" }),
         React__default['default'].createElement(LogoWithText, { className: "desktop-icon", isDark: isDark })));
     return (React__default['default'].createElement(Flex, null,
-        React__default['default'].createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "24px" }, isPushed ? (React__default['default'].createElement(Icon$m, { width: "24px", color: "textSubtle" })) : (React__default['default'].createElement(Icon$n, { width: "24px", color: "textSubtle" }))),
+        React__default['default'].createElement(MenuButton, { "aria-label": "Toggle menu", onClick: togglePush, mr: "24px" }, isPushed ? (React__default['default'].createElement(Icon$m, { width: "24px", color: isDark ? "textSubtle" : "#F04D92" })) : (React__default['default'].createElement(Icon$n, { width: "24px", color: isDark ? "textSubtle" : "#F04D92" }))),
         isAbsoluteUrl ? (React__default['default'].createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
 };
 var Logo$1 = React__default['default'].memo(Logo, function (prev, next) { return prev.isPushed === next.isPushed && prev.isDark === next.isDark; });
@@ -3620,10 +3613,10 @@ var templateObject_1$a;
 
 var PriceLink = styled__default['default'].a(templateObject_1$9 || (templateObject_1$9 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
-    var cakePriceUsd = _a.cakePriceUsd;
+    var cakePriceUsd = _a.cakePriceUsd, isDark = _a.isDark;
     return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: "https://pancakeswap.info/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82", target: "_blank" },
         React__default['default'].createElement(Icon$S, { width: "24px", mr: "8px" }),
-        React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
+        React__default['default'].createElement(Text, { color: isDark ? "textSubtle" : "#F04D92", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
 };
 var CakePrice$1 = React__default['default'].memo(CakePrice);
 var templateObject_1$9;
@@ -3641,32 +3634,35 @@ var ThemeSwitcher = function (_a) {
 var ThemeSwitcher$1 = React__default['default'].memo(ThemeSwitcher, function (prev, next) { return prev.isDark === next.isDark; });
 
 var Icons$1 = IconModule;
-var SocialLinks = function () { return (React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
-    var Icon = Icons$1[social.icon];
-    var iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-    var mr = index < socials.length - 1 ? "24px" : 0;
-    // if (social.items) {
-    //   return (
-    //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
-    //       {social.items.map((item) => (
-    //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
-    //           {item.label}
-    //         </Link>
-    //       ))}
-    //     </Dropdown>
-    //   );
-    // }
-    return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr, color: "#F04D92" },
-        React__default['default'].createElement(Icon, __assign({}, iconProps))));
-}))); };
+var SocialLinks = function (_a) {
+    var isDark = _a.isDark;
+    return (React__default['default'].createElement(Flex, null, socials.map(function (social, index) {
+        var Icon = Icons$1[social.icon];
+        var iconProps = { width: "24px", color: isDark ? "textSubtle" : "#F04D92", style: { cursor: "pointer" } };
+        var mr = index < socials.length - 1 ? "24px" : 0;
+        // if (social.items) {
+        //   return (
+        //     <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+        //       {social.items.map((item) => (
+        //         <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+        //           {item.label}
+        //         </Link>
+        //       ))}
+        //     </Dropdown>
+        //   );
+        // }
+        return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr, color: "#F04D92" },
+            React__default['default'].createElement(Icon, __assign({}, iconProps))));
+    })));
+};
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
 
 var Icons = IconModule;
 var LanguageIcon = Icons.LanguageIcon;
 var LangSelector = function (_a) {
-    var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang;
-    return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: "#F04D92", width: "24px" }) },
-            React__default['default'].createElement(Text, { color: "#F04D92" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
+    var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, isDark = _a.isDark;
+    return (React__default['default'].createElement(Dropdown, { position: "top-right", target: React__default['default'].createElement(Button, { variant: "text", startIcon: React__default['default'].createElement(LanguageIcon, { color: isDark ? "textSubtle" : "#F04D92", width: "24px" }) },
+            React__default['default'].createElement(Text, { color: isDark ? "textSubtle" : "#F04D92" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default['default'].createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
         // Safari fix
         style: { minHeight: "32px", height: "auto" } }, lang.language)); })));
 };
@@ -3687,11 +3683,11 @@ var PanelFooter = function (_a) {
     }
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement(SocialEntry, null,
-            React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }),
+            React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd, isDark: isDark }),
             React__default['default'].createElement(SocialLinks$1, null)),
         React__default['default'].createElement(SettingsEntry, null,
             React__default['default'].createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
-            React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang }))));
+            React__default['default'].createElement(LangSelector$1, { isDark: isDark, currentLang: currentLang, langs: langs, setLang: setLang }))));
 };
 var templateObject_1$8, templateObject_2$3, templateObject_3$1;
 

@@ -4,6 +4,7 @@ interface Props {
     currentLang: string;
     langs: Language[];
     setLang: (lang: Language) => void;
+    isDark?: boolean;
 }
 declare const _default: React.NamedExoticComponent<Props>;
 export default _default;

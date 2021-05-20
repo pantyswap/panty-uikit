@@ -14,14 +14,15 @@ interface Props {
   currentLang: string;
   langs: Language[];
   setLang: (lang: Language) => void;
+  isDark?: boolean;
 }
 
-const LangSelector: React.FC<Props> = ({ currentLang, langs, setLang }) => (
+const LangSelector: React.FC<Props> = ({ currentLang, langs, setLang, isDark }) => (
   <Dropdown
     position="top-right"
     target={
-      <Button variant="text" startIcon={<LanguageIcon color="#F04D92" width="24px" />}>
-        <Text color="#F04D92">{currentLang?.toUpperCase()}</Text>
+      <Button variant="text" startIcon={<LanguageIcon color={isDark ? "textSubtle" : "#F04D92"} width="24px" />}>
+        <Text color={isDark ? "textSubtle" : "#F04D92"}>{currentLang?.toUpperCase()}</Text>
       </Button>
     }
   >
