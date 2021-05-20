@@ -2853,7 +2853,8 @@ var dark$3 = {
 };
 
 var light$2 = {
-    background: lightColors.backgroundAlt,
+    // background: lightColors.backgroundAlt,
+    background: '#ffcbde',
 };
 var dark$2 = {
     background: darkColors.backgroundAlt,
