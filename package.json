@@ -1,14 +1,14 @@
 {
-    "name": "@sdnaswap/uikit",
+    "name": "@pantyswap/uikit",
     "version": "0.32.3",
-    "description": "Set of UI components for sdna projects",
+    "description": "Set of UI components for panty projects",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
     "files": [
         "dist"
     ],
-    "repository": "https://github.com/sdnaswap/sdna-uikit",
+    "repository": "https://github.com/pantyswap/panty-uikit",
     "license": "MIT",
     "scripts": {
         "start": "yarn storybook",
