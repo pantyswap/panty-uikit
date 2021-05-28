@@ -29,7 +29,7 @@ const Pip = styled.div`
 `;
 
 const Avatar: React.FC<AvatarProps> = ({ profile }) => {
-  const { username = "Bunny", image, profileLink, noProfileLink, showPip = false } = profile;
+  const { username = "Panty", image, profileLink, noProfileLink, showPip = false } = profile;
   const link = profile.username ? profileLink : noProfileLink;
   const isExternal = link.startsWith("http");
   const ariaLabel = "Link to profile";
