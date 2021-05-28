@@ -17,4 +17,5 @@ export { default as TeamBattleIcon } from "./TeamBattle";
 export { default as TelegramIcon } from "./Telegram";
 export { default as TicketIcon } from "./Ticket";
 export { default as TradeIcon } from "./Trade";
+export { default as PresaleIcon } from "./Presale";
 export { default as TwitterIcon } from "./Twitter";
