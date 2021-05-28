@@ -3978,11 +3978,11 @@ var Avatar = function (_a) {
     var icon = image ? (React__default['default'].createElement("img", { src: image, alt: "profile avatar", height: "32px", width: "32px" })) : (React__default['default'].createElement(Icon$X, { width: "32px", height: "32px" }));
     if (isExternal) {
         return (React__default['default'].createElement(StyledAvatar, { title: username },
-            React__default['default'].createElement("a", { href: link, "aria-label": ariaLabel }, icon),
+            React__default['default'].createElement("a", { href: "#", "aria-label": ariaLabel }, icon),
             showPip && React__default['default'].createElement(Pip, null)));
     }
     return (React__default['default'].createElement(StyledAvatar, { title: username },
-        React__default['default'].createElement(reactRouterDom.Link, { to: link, "aria-label": ariaLabel }, icon),
+        React__default['default'].createElement(reactRouterDom.Link, { to: "#", "aria-label": ariaLabel }, icon),
         showPip && React__default['default'].createElement(Pip, null)));
 };
 var templateObject_1$4, templateObject_2$1;
