@@ -28,7 +28,7 @@ const getBaseThumbStyles = ({ isMax, disabled }: StyledInputProps) => `
   border: 0;
   cursor: ${getCursorStyle};
   width: 24px;
-  height: 32px;
+  height: 24px;
   filter: ${disabled ? "grayscale(100%)" : "none"};
   transform: translate(-2px, -2px);
   transition: 200ms transform;
