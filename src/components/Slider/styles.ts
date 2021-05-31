@@ -1,8 +1,8 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
-// import bunnyHeadMain from "./svg/bunnyhead-main.svg";
-// import bunnyHeadMax from "./svg/bunnyhead-max.svg";
+import bunnyHeadMain from "./svg/bunnyhead-main.svg";
+import bunnyHeadMax from "./svg/bunnyhead-max.svg";
 import bunnyButt from "./svg/bunnybutt.svg";
 
 interface SliderLabelProps {
@@ -23,12 +23,12 @@ const getCursorStyle = ({ disabled = false }: DisabledProp) => {
 
 const getBaseThumbStyles = ({ isMax, disabled }: StyledInputProps) => `
   -webkit-appearance: none;
-  background-image: url(/images/bunny-slider.png);
+  background-image: url(${isMax ? bunnyHeadMax : bunnyHeadMain});
   background-color: transparent;
   border: 0;
   cursor: ${getCursorStyle};
   width: 24px;
-  height: 17px;
+  height: 32px;
   filter: ${disabled ? "grayscale(100%)" : "none"};
   transform: translate(-2px, -2px);
   transition: 200ms transform;
