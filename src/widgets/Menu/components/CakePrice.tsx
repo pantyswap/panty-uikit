@@ -25,7 +25,7 @@ const PriceLink = styled.a`
 const CakePrice: React.FC<Props> = ({ cakePriceUsd, isDark }) => {
   
   return cakePriceUsd ? (
-    <PriceLink href="#" target="_blank">
+    <PriceLink href="https://exchange.yieldpanty.finance/#/swap" target="_blank">
       <PancakeRoundIcon width="24px" mr="8px" />
       <Text color={isDark ? "textSubtle" : "#F04D92"} bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
     </PriceLink>

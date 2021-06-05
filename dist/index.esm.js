@@ -3601,7 +3601,7 @@ var templateObject_1$b;
 var PriceLink$1 = styled.a(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, isDark = _a.isDark;
-    return cakePriceUsd ? (React.createElement(PriceLink$1, { href: "#", target: "_blank" },
+    return cakePriceUsd ? (React.createElement(PriceLink$1, { href: "https://exchange.yieldpanty.finance/#/swap", target: "_blank" },
         React.createElement(Icon$U, { width: "24px", mr: "8px" }),
         React.createElement(Text, { color: isDark ? "textSubtle" : "#F04D92", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React.createElement(Skeleton, { width: 80, height: 24 }));
 };
@@ -3858,7 +3858,7 @@ var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b;
     return (React.createElement(Modal, { title: "Connect to a wallet", onDismiss: onDismiss },
         connectors.map(function (entry, index) { return (React.createElement(WalletCard, { key: entry.title, login: login, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }),
-        React.createElement(HelpLink, { href: "https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain", external: true },
+        React.createElement(HelpLink, { href: "https://pantyswap.gitbook.io/pantyswap", external: true },
             React.createElement(Icon$19, { color: "primary", mr: "6px" }),
             "Learn how to connect")));
 };
@@ -3950,11 +3950,16 @@ var Pip = styled.div(templateObject_2$1 || (templateObject_2$1 = __makeTemplateO
 });
 var Avatar = function (_a) {
     var profile = _a.profile;
-    var _b = profile.username, username = _b === void 0 ? "Panty" : _b, image = profile.image, profileLink = profile.profileLink, noProfileLink = profile.noProfileLink, _c = profile.showPip, showPip = _c === void 0 ? false : _c;
+    var _b = profile.username, username = _b === void 0 ? "Panty" : _b; profile.image; var profileLink = profile.profileLink, noProfileLink = profile.noProfileLink, _c = profile.showPip, showPip = _c === void 0 ? false : _c;
     var link = profile.username ? profileLink : noProfileLink;
     var isExternal = link.startsWith("http");
     var ariaLabel = "Link to profile";
-    var icon = image ? (React.createElement("img", { src: image, alt: "profile avatar", height: "32px", width: "32px" })) : (React.createElement(Icon$X, { width: "32px", height: "32px" }));
+    var icon = React.createElement(Icon$X, { width: "32px", height: "32px" });
+    // const icon = image ? (
+    //   <img src={image} alt="profile avatar" height="32px" width="32px" />
+    // ) : (
+    //   <NoProfileAvatar width="32px" height="32px" />
+    // );
     if (isExternal) {
         return (React.createElement(StyledAvatar, { title: username },
             React.createElement("a", { href: "#", "aria-label": ariaLabel }, icon),
