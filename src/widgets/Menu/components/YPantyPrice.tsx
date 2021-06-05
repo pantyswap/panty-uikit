@@ -25,7 +25,7 @@ const PriceLink = styled.a`
 const YPantyPrice: React.FC<Props> = ({ yPantyPriceUsd, isDark }) => {
   
   return yPantyPriceUsd ? (
-    <PriceLink href="https://poocoin.app/tokens/0x6a8d8f3c224cd16d7b143930fb428faf20e9802b" target="_blank">
+    <PriceLink href="https://poocoin.app/tokens/0x90ad5433fb7b70e04244824d825a98ed013477de" target="_blank">
       <YPantyIcon width="24px" mr="8px" />
       <Text color={isDark ? "textSubtle" : "#F04D92"} bold>{`$${yPantyPriceUsd.toFixed(3)}`}</Text>
     </PriceLink>
